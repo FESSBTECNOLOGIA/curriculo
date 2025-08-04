@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Fernando dos Santos Carvalho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 45px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #1b4e80;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle-role {
+            text-align: center;
+            font-size: 1.2em;
+            color: #5a6268;
+            margin-top: -5px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            color: #3b5a7e;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.25em;
+            color: #495057;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Seção de Contato e Foto */
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+
+        .contact-info p {
+            margin: 2px 0;
+        }
+
+        .contact-info a {
+            color: #6c757d;
+            margin: 0 5px;
+        }
+
+        /* Seção de Resumo/Objetivo */
+        .summary {
+            text-align: justify;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+            color: #495057;
+        }
+
+        /* Experiência e Formação */
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #34495e;
+            font-size: 1.1em;
+        }
+
+        .item-subtitle {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .item-period {
+            font-size: 0.85em;
+            color: #777;
+            font-weight: 400;
+        }
+
+        .item-description ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding-left: 0;
+            font-size: 0.95em;
+            color: #495057;
+        }
+
+        /* Habilidades */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-right: 5px;
+            padding: 3px 0;
+        }
+
+        .skill-item {
+            background-color: #e2f0ff;
+            color: #1b4e80;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            border: 1px solid #cce0ff;
+        }
+
+        /* Cursos, Certificações e Idiomas */
+        .certifications ul, .languages ul {
+            font-size: 0.95em;
+            color: #495057;
+        }
+        .certifications li, .languages li {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Rodapé */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.75em;
+            color: #adb5bd;
+        }
+
+        /* Media Queries para Responsividade (impressão e telas menores) */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle-role {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .item-period {
+                margin-top: 5px;
+            }
+            .skills-list {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                padding: 15mm;
+                max-width: none;
+                width: auto;
+            }
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+            .profile-photo {
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .subtitle-role {
+                font-size: 1.1em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .item-description ul {
+                list-style: disc;
+                margin-left: 25px;
+            }
+            .skill-item {
+                background-color: #f0f0f0;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header-content">
+            <img src="https://s3-imagens-finfat.s3.us-east-2.amazonaws.com/1753981370948" alt="Sua Foto de Perfil" class="profile-photo">
+            <h1>Fernando dos Santos Carvalho</h1>
+            <p class="subtitle-role">Analista Sênior AdvPL/TL++</p>
+            <p class="contact-info">
+                (11) 94022-5920 | <a href="mailto:fernandofessb@gmail.com">fernandofessb@gmail.com</a> | Jacareí, SP<br>
+                <a href="https://www.linkedin.com/in/fernando-carvalho-ti/" target="_blank">LinkedIn</a>
+                <span style="margin: 0 5px;">|</span> <a href="https://github.com/FESSBTECNOLOGIA/" target="_blank">GitHub</a>
+            </p>
+        </header>
+
+        <section class="summary">
+            <h2>Resumo Profissional</h2>
+            <p>
+                Profissional sênior com 20 anos de experiência no ciclo completo de desenvolvimento de software, especializado em ADVPL e no ecossistema TOTVS Protheus. Minha atuação é focada na gestão de **Fábrica de Software**, desde o levantamento de requisitos até a entrega final, com responsabilidade direta pela evolução de **portais de vendas**. Possuo uma **MBA em Metodologias Ágeis com certificação**, o que me permite liderar e implementar projetos com eficiência. Com um perfil de gestão, expertise em arquitetura de software e boa comunicação, busco oportunidades que unam desafios técnicos e de liderança.
+            </p>
+        </section>
+
+        <section class="experience">
+            <h2>Experiência Profissional</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Software Engineer Manager</span>
+                    <span class="item-period">set/2015 – Atual</span>
+                </div>
+                <div class="item-subtitle">EthosX - São Paulo, SP</div>
+                <div class="item-description">
+                    <ul>
+                        <li>Gestor da Fábrica de Software e do Portal de Vendas, supervisionando o ciclo completo de projetos, do levantamento de requisitos à entrega e implantação.</li>
+                        <li>Responsável pela evolução contínua da plataforma, implementando novas funcionalidades, garantindo sua manutenção e alinhando o produto às demandas do mercado.</li>
+                        <li>Atuei na otimização de processos de desenvolvimento e na gestão de recursos, garantindo a qualidade das entregas dentro do prazo e orçamento.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Analista Sênior AdvPL</span>
+                    <span class="item-period">jan/2011 – set/2015</span>
+                </div>
+                <div class="item-subtitle">TOTVS S.A. - São Paulo, SP</div>
+                <div class="item-description">
+                    <ul>
+                        <li>Atuei como desenvolvedor na Fábrica de Software, gerenciando o fluxo de trabalho do levantamento de requisitos à entrega final em diversos módulos do ERP Protheus.</li>
+                        <li>Desenvolvi novas funcionalidades e fui responsável pela resolução de problemas técnicos complexos, garantindo a estabilidade do sistema.</li>
+                        <li>Participei ativamente do suporte de Nível 1, registrando e acompanhando tickets de problemas, além de contribuir para a base de conhecimento com novas soluções e documentações.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Formação Acadêmica</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">MBA em Gestão de Projetos com Ênfase em Metodologias Ágeis</span>
+                    <span class="item-period">jun/2018 – dez/2019</span>
+                </div>
+                <div class="item-subtitle">Impacta - São Paulo, SP</div>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">Bacharel em Ciências da Computação</span>
+                    <span class="item-period">ago/2009 – jul/2013</span>
+                </div>
+                <div class="item-subtitle">FMU - São Paulo, SP</div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Habilidades</h2>
+            <div class="skills-list">
+                <span class="skill-category">Linguagens:</span>
+                <span class="skill-item">AdvPL</span>
+                <span class="skill-item">TL++</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">HTML5</span>
+                <span class="skill-item">CSS3</span>
+                <span class="skill-item">Angular</span>
+                
+                <span class="skill-category">Frameworks/Bibliotecas:</span>
+                <span class="skill-item">Node.js</span>
+                <span class="skill-item">Express</span>
+                <span class="skill-item">Next.js</span>
+                <span class="skill-item">NestJS</span>
+                <span class="skill-item">React</span>
+                
+                <span class="skill-category">Ferramentas:</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">Docker</span>
+                <span class="skill-item">VS Code</span>
+                <span class="skill-item">Jira</span>
+                
+                <span class="skill-category">Soft Skills:</span>
+                <span class="skill-item">Gestão de Projetos</span>
+                <span class="skill-item">Metodologias Ágeis</span>
+                <span class="skill-item">Comunicação Eficaz</span>
+                <span class="skill-item">Trabalho em Equipe</span>
+                <span class="skill-item">Resolução de Problemas</span>
+                <span class="skill-item">Adaptabilidade</span>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Cursos e Certificações</h2>
+            <ul>
+                <li>Imersão em GenIA - AWS, 2025</li>
+                <li>HCT TEC-FRW-MAT-FAT - TOTVS, 2012-2014</li>
+                <li>Algoritmos e Estruturas de Dados - MIT Professional Education, 2015</li>
+                <li>MCP Developers C# - Microsoft, 2011</li>
+                <li>MCP SQL - Microsoft, 2011</li>
+            </ul>
+        </section>
+
+        <section class="languages">
+            <h2>Idiomas</h2>
+            <ul>
+                <li>Português: Nativo</li>
+                <li>Inglês: Leitura e conversação intermediárias</li>
+                <li>Espanhol: Leitura e conversação intermediárias</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>Última atualização: Julho de 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
